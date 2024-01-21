@@ -29,7 +29,8 @@ services:
     networks:
       - tfou_network
     environment:
-      ASPNETCORE_ENVIRONMENT: Development
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5000
 
 volumes:
   app-data:

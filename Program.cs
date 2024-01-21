@@ -42,15 +42,11 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        var host = Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-                webBuilder.UseStartup<Startup>()
-                    .UseKestrel(options =>
-                    {
-                        options.Listen(IPAddress.Any, 8080);
-                    });
-            })
+        var host = new WebHostBuilder()
+            .UseKestrel()
+            .UseContentRoot(Directory.GetCurrentDirectory())
+            .UseIISIntegration()
+            .UseStartup<Startup>()
             .Build();
 
         host.Run();
