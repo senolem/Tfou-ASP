@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="./styles.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="model-viewer">
+			<div id="hat" class="model-layer">
+			  <img id="hat-image" src="./assets/306.png" class="hatLayer">
+			</div>
+			<div id="face" class="model-layer">
+			  <img id="face-image" src="./assets/193.png" class="faceLayer">
+			</div>
+			<div id="body" class="model-layer">
+			  <img id="body-image" src="./assets/000.png" class="bodyLayer">
+			</div>
+			<div id="legs" class="model-layer">
+			  <img id="legs-image" src="./assets/427.png" class="legsLayer">
+			</div>
+		  </div>		  
+		<div id="controls">
+			<div class="control-group">
+			  <h3>Chapeau</h3>
+			  <button id="hat-decrement">&lt;&lt;</button>
+			  <p class="displayId"><span id="hatId">0</span>/120</p>
+			  <button id="hat-increment">&gt;&gt;</button>
+			</div>
+			<div class="control-group">
+				<h3>Visage</h3>
+				<button id="face-decrement">&lt;&lt;</button>
+				<p class="displayId"><span id="faceId">0</span>/112</p>
+				<button id="face-increment">&gt;&gt;</button>
+			  </div>
+			  <div class="control-group">
+				<h3>Corps</h3>
+				<button id="body-decrement">&lt;&lt;</button>
+				<p class="displayId"><span id="bodyId">0</span>/192</p>
+				<button id="body-increment">&gt;&gt;</button>
+			  </div>
+			  <div class="control-group">
+				<h3>Jambes</h3>
+				<button id="legs-decrement">&lt;&lt;</button>
+				<p class="displayId"><span id="legsId">0</span>/142</p>
+				<button id="legs-increment">&gt;&gt;</button>
+			  </div>
+			  <div class="control-group">
+				<button id="save-button">Sauvegarder</button>
+				<button id="random-button" alt="Aléatoire">↻</button>
+			  </div>
+		</div>
+		<script language="JavaScript" src="./modelViewer.js"></script>
+	</body>
+</html>
+

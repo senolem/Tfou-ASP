@@ -1,0 +1,14 @@
+﻿{
+	"profiles": {
+	  "tfou": {
+		"commandName": "Project",
+		"dotnetRunMessages": true,
+		"launchBrowser": true,
+		"applicationUrl": "https://0.0.0.0:80",
+		"environmentVariables": {
+		  "ASPNETCORE_ENVIRONMENT": "Production"
+		}
+	  }
+	}
+  }
+  

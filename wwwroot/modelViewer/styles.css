@@ -1,0 +1,71 @@
+body {
+	background-color: #646464;
+	display: flex;
+	align-items: center;
+	border-collapse: collapse;
+	margin: 0;
+	position: fixed;
+}
+#model-viewer {
+	position: relative;
+	width: 200px;
+	height: 350px;
+	border: 3.5px solid rgb(50, 50, 50);
+}
+.model-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+}
+.hatLayer {
+	position: absolute;
+	z-index: 4;
+}
+.faceLayer {
+	position: absolute;
+	z-index: 3;
+}
+.bodyLayer {
+	position: absolute;
+	z-index: 2;
+}
+.legsLayer {
+	position: absolute;
+	z-index: 1;
+}
+#controls {
+	background-color: rgba(0, 0, 0, 0.5);
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	align-items: center;
+	justify-content: center;
+	border: 3.5px solid rgb(50, 50, 50);
+	width: 175px;
+	height: 350px;
+}
+.control-group {
+	margin-bottom: 20px;
+	color: #fff;
+	text-align: center;
+}
+.control-group h3 {
+	margin-top: 0.5px;
+	margin-bottom: 0.5px;
+}
+button {
+	background-color: #444;
+	color: #fff;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+button:hover {
+	background-color: #555;
+}
+.displayId {
+	display: inline-block;
+	margin: 0;
+	width: 75px;
+}

@@ -1,0 +1,39 @@
+﻿version: "3.7"
+
+services:
+  swag:
+    image: lscr.io/linuxserver/swag:latest
+    container_name: swag
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+      - URL=api.absoluflash.co
+      - VALIDATION=http
+      - EMAIL=nobody@gmail.com
+    volumes:
+      - "./swag:/config"
+    networks:
+      - tfou_network
+    ports:
+      - "443:443"
+      - "80:80"
+    restart: unless-stopped
+  app:
+    container_name: tfou
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - tfou_network
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+
+volumes:
+  app-data:
+  db-data:
+  
+networks:
+  tfou_network:

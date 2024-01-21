@@ -1,0 +1,36 @@
+@using Microsoft.AspNetCore.Http.Extensions;
+@{
+    ViewData["Title"] = "Avatar X'Trem Surfeur";
+    var Request = Context.Request;
+    var location = Uri.EscapeDataString(new Uri($"{Request.Scheme}://{Request.Host}").OriginalString);
+    var full_location = Uri.EscapeDataString(new Uri($"{Request.Scheme}://{Request.Host}{Request.Path}").OriginalString + "/niveaux");
+}
+<style>
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #0d0d0d;
+  background-size: cover;
+  height: 100vh;
+}
+</style>
+<script src="/ruffle/FlashDetect.js"></script>
+<script>
+    if (!FlashDetect.installed) {
+        var ruffleScript = document.createElement("script");
+        ruffleScript.src = "/ruffle/ruffle.js";
+        document.head.appendChild(ruffleScript);
+    }
+</script>
+<object style="display: contents" type="application/x-shockwave-flash" bgcolor="#ffffff" data='@Url.Action("Game")' width="960" height="560"
+    id="flashObject158161" style="visibility: visible;">
+    <param name="quality" value="high">
+    <param name="bgcolor" value="ffffff">
+    <param name="allowScriptAccess" value="always">
+    <param name="wmode" value="transparent">
+    <param name="flashvars"
+	value="USER_TICKET=00000000000000000000000000000000:0000000000000000000000000000000000000000&amp;urlmedia=https%3A%2F%2Fs.tf1.fr%2F&amp;CON_ID=4049980&amp&HOST_API_DYN=@(location)&HOST_API=@(location)&IMG_BACKGROUND=&amp;PARAMS_XML=%3Cswfs%3E%0D%0A%3Cswf+id%3D%22niveau_australie%22%3E@(full_location)%2F10624169kbdrn.swf%3C%2Fswf%3E%0D%0A%3Cswf+id%3D%22niveau_hawai%22%3E@(full_location)%2F10624170qltte.swf%3C%2Fswf%3E%0D%0A%3Cswf+id%3D%22niveau_pizza%22%3E@(full_location)%2F10624171bqvoc.swf%3C%2Fswf%3E%0D%0A%3Cswf+id%3D%22niveau_pole%22%3E@(full_location)%2F10624172kpcyh.swf%3C%2Fswf%3E%0D%0A%3Cswf+id%3D%22niveau_training%22%3E@(full_location)%2F10624173xpzeh.swf%3C%2Fswf%3E%0D%0A%3C%2Fswfs%3E">
+</object>
